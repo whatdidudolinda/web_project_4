@@ -1,9 +1,15 @@
 # Project 4: Around The U.S.
+* [Link to the project in Github](https://whatdidudolinda.github.io/web_project_4/)
 
 ### Overview
 
 * Figma
+* Javascript
 * Images
+
+**Intro**
+
+This project we use Figma design to recreate the design with knowledge we received from previous lessons and the new lesson. This project will include Javascript.
 
 **Figma**
 
@@ -11,6 +17,19 @@
 
 **Images**
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
+Images have been optimized.
 
-Have fun with JavaScript!
+**Technologies**
+
+HTML 
+CSS  
+Javascript
+
+**Supported Browsers**
+
+Google 
+Chrome 
+Yandex 
+Firefox
+
+**Credits Built & Designed by Linda Huynh/Practicum by Yandex**
