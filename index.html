@@ -2,22 +2,67 @@
 <html>
 
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <title>Around The U.S.</title>
-    <link rel="stylesheet" type="text/css" href="./pages/index.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <title>Around The U.S.</title>
+  <link rel="stylesheet" type="text/css" href="./pages/index.css" />
 </head>
 
 <body class="page">
-    <header class="header"></header>
-    <main>
-        <section class="profile"></section>
-        <section class="elements"></section>
-        <section class="form"></section>
-    </main>
-    <footer class="footer"></footer>
-    <script src="/blocks/javascript/scripts.js"></script>
+  <header class="header">
+    <div class="header__logo"></div>
+  </header>
+  <main>
+    <section class="profile">
+      <div class="profile__info">
+        <img class="profile__avatar" src='./images/profile-pic.jpg' alt='Profile Image'>
+        <div class="profile__data">
+          <p class="profile__name">Jacques Cousteau</p>
+          <p class="profile__description">Explorer</p>
+        </div>
+        <button class="profile__edit-button"></button>
+        <button class="profile__add-button"></button>
+      </div>
+    </section>
+    <section class="elements">
+      <ul class="element">
+        <li class="element__item">
+          <img src="./images/yosemite-valley.jpg" alt="yosemite-valley" class="element__image">
+          <h3 class="element__title">Yosemite Valley</h3>
+          <div class="element__heart"></div>
+        </li>
+        <li class="element__item">
+          <img src="./images/lake-louise.png" alt="lake-louise" class="element__image">
+          <h3 class="element__title">Lake Louise</h3>
+          <div class="element__heart"></div>
+        </li>
+        <li class="element__item">
+          <img src="./images/bald-mountains.png" alt="bald-mountains" class="element__image">
+          <h3 class="element__title">Bald Mountains</h3>
+          <div class="element__heart"></div>
+        </li>
+        <li class="element__item">
+          <img src="./images/latemar.png" alt="latemar" class="element__image">
+          <h3 class="element__title">Latemar</h3>
+          <div class="element__heart"></div>
+        </li>
+        <li class="element__item">
+          <img src="./images/vanoise-national.png" alt="vanoise-national" class="element__image">
+          <h3 class="element__title">Vanoise National Park</h3>
+          <div class="element__heart"></div>
+        </li>
+        <li class="element__item">
+          <img src="./images/lago-di-braies.png" alt="lago-di-braies" class="element__image">
+          <h3 class="element__title">Lago di Braies</h3>
+          <div class="element__heart"></div>
+        </li>
+      </ul>
+    </section>
+    <section class="form"></section>
+  </main>
+  <footer class="footer"></footer>
+  <script src="/blocks/javascript/scripts.js"></script>
 </body>
 
 </html>

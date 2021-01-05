@@ -1,0 +1,13 @@
+.profile__edit-button {
+    border: 1px solid #fff;
+    background: url(/images/edit-avatar.png) center no-repeat;
+    width: 24px;
+    height: 24px;
+    outline: 0;
+    display: inline-block;
+    margin: 37px 0 0;
+    padding: 7px;
+    color: white;
+    cursor: pointer;
+    background-size: 10px 10px, cover;
+  }

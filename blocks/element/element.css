@@ -1,0 +1,12 @@
+@import url(../element/__item/element__item.css);
+@import url(../element/__title/element__title.css);
+@import url(../element/__heart/element__heart.css);
+@import url(../element/__image/element__image.css);
+
+.element {
+    min-height: 300px;
+    max-width: 350px;
+    margin: 0 auto;
+    position: relative;
+    list-style-type: none;
+}
