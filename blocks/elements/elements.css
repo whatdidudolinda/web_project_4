@@ -1,6 +1,8 @@
+@import url(../elements/__container/elements__container.css);
+
 .elements {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
-    grid-auto-rows: auto;
-    grid-gap: 1rem;
+    padding-top: 47px;
+    padding-bottom: 0;
+    max-width: 882px;
+    margin: auto;
 }
