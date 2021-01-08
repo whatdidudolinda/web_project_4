@@ -2,8 +2,10 @@
 
 .header {
     display: flex;
+    position: relative;
     min-width: 320px;
     max-width: 880px;
     height: 74px;
     margin: 45px 200px 40px;
+    border-bottom: 1px solid rgba(84, 84, 84, .7);
 }
