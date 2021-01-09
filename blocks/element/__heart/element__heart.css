@@ -1,6 +1,9 @@
 .element__heart {
-    position: relative;
-    float: right;
+    background: url(/images/heart.svg) no-repeat;
     margin: 0;
     padding: 0;
+    width: 20.76px;
+    height: 18.13px;
+    border: none;
+    float: right;
 }
