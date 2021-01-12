@@ -6,3 +6,19 @@
     max-width: 882px;
     margin: auto;
 }
+
+@media screen and (max-width: 1024px) {
+    .elements {
+      padding-right: 48px;
+      padding-left: 48px;
+    }
+  }
+  
+  @media screen and (max-width: 425px) {
+    .elements {
+      padding-top: 36px;
+      padding-right: 19px;
+      padding-left: 19px;
+    }
+  }
+  

@@ -1,4 +1,9 @@
 .profile__description {
-    margin: 0 0 0 30px;
+    margin: 16px 0 0 30px;
     padding: 0;
+    max-width: 400px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.94px;
 }

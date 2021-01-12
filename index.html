@@ -14,17 +14,17 @@
     <div class="header__logo"></div>
   </header>
   <main>
-    <section class="profile">
-      <div class="profile__info">
+    <div class="profile">
+      <div class="profile__container">
         <img class="profile__avatar" src='./images/profile-pic.jpg' alt='Profile Image'>
         <div class="profile__data">
           <p class="profile__name">Jacques Cousteau</p>
           <p class="profile__description">Explorer</p>
         </div>
         <button class="profile__edit-button"></button>
-        <button class="profile__add-button"></button>
       </div>
-    </section>
+      <button class="profile__add-button"></button>
+    </div>
     <section class="elements">
       <ul class="elements__container">
         <li class="element__item">
@@ -70,8 +70,26 @@
         </li>
       </ul>
     </section>
-    <section class="form"></section>
   </main>
-  <footer class="footer"><p class="footer__copyright">&copy; 2020 Around The U.S.</p></footer>
+  <!-- //Footer// -->
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2020 Around The U.S.</p>
+  </footer>
+  <!-- //Modal Content// -->
+  <div class="modal modal_open">
+    <div class="modal__container">
+      <form action="#" class="form">
+        <h2 class="form__title">Edit profile</h2>
+        <label class="form__label">
+          <input type="text" class="form__input form__input_type_name" placeholder="Name">
+        </label>
+        <label class="form__label">
+          <input type="text" class="form__input form__input_type_description" placeholder="About me">
+        </label>
+        <button class="modal__btn-close"></button>
+        <button type="submit">Save</button>
+    </div>
+    </form>
+  </div>
   <script src="/blocks/javascript/scripts.js"></script>
 </body>

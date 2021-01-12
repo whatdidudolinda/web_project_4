@@ -1,0 +1,32 @@
+.popup {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    top: 0;
+    left: 0;
+    color: black;
+    opacity: 0;
+}
+
+.popup_opened {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup__close-button {
+    height: 40px;
+    width: 40px;
+    background: url(/images/close-icon.svg) center no-repeat;
+    float: right;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.popup__title {
+    color: #000;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.78px;
+}

@@ -4,10 +4,18 @@
     width: 24px;
     height: 24px;
     outline: 0;
-    display: inline-block;
-    margin: 37px 0 0;
-    padding: 7px;
+    padding: 10px;
     color: white;
     cursor: pointer;
     background-size: 10px 10px, cover;
+  }
+
+  @media screen and (max-width: 425px) {
+    .profile__edit-button {
+      height: 5.25px;
+      width: 5.25px;
+      margin-right: 0;
+      background-size: 7px;
+      margin-top: 3px;
+    }
   }

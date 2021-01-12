@@ -1,0 +1,8 @@
+.modal__btn-close {
+    height: 40px;
+    width: 40px;
+    background: url(/images/close-icon.svg) center no-repeat;
+    float: right;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 30px;
+}
