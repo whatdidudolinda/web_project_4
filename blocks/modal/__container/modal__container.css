@@ -1,7 +1,13 @@
 .modal__container {
-    position: relative;
+    position: fixed;
     background: #fff;
     padding: 40px;
-    border-radius: 20px;
+    border-radius: 10px;
+    margin: auto;
+    max-width: 330px;
+    max-height: 430px;
+    top: 195px;
+    left: 40px;
+    right: 40px;
     margin: auto;
 }

@@ -1,9 +1,10 @@
 @import url(../modal/__container/modal__container.css);
 @import url(../modal/__btn-close/modal__btn-close.css);
 @import url(../modal/_open/modal_open.css);
+@import url(../modal/__submit/modal__submit.css);
 
 .modal {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -13,7 +14,4 @@
     overflow: auto;
     justify-content: center;
     align-items: center;
-    display: flex;
-    visibility: hidden;
-    z-index: 1;
 }
