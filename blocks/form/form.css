@@ -10,12 +10,16 @@
 @import url(../form/__title/form__title.css);
 @import url(../form/__label/form__label.css);
 .form {
-    display: none;
+    display: block;
     position: fixed;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, .7);
+    visibility: hidden;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
     z-index: 1;
 }

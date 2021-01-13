@@ -1,5 +1,6 @@
 .card__item {
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 0;
     padding: 0;
+    background-color: #fff;
 }

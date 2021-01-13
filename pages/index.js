@@ -10,13 +10,13 @@ let formName = document.querySelector(".form__input_type_name");
 let formDescri = document.querySelector(".form__input_type_description");
 
 function formOpen() {
-    opened.classList.add("form_opened");
+    opened.classList.add("popup_open");
 }
 
 editButton.addEventListener("click", formOpen);
 
 function formClose() {
-    closed.classList.remove("form_opened");
+    closed.classList.remove("popup_open");
 }
 
 btnClose.addEventListener("click", formClose);
