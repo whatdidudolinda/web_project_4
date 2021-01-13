@@ -2,6 +2,7 @@
     position: absolute;
     background: url(/images/add-button.svg) center no-repeat;
     color: #fff;
+    padding: 0;
     width: 150px;
     height: 50px;
     border: 2px solid #fff;
@@ -11,13 +12,12 @@
     padding: 14px 16px;
     cursor: pointer;
     right: 0;
-    order: 3;
 }
 
 @media screen and (max-width: 480px){
     .profile__add-button {
       width: 100%;
-      margin-top: 30px;
+      bottom: 0;
       background-size: 16px 16px;
-    }
+      margin: 0;
   }

@@ -11,9 +11,8 @@
 }
 
 @media screen and (max-width: 480px) {
-    .profile__occupation {
-        margin-bottom: 32px;
+    .profile__description {
+        margin: 14px 0 0;
         align-self: center;
-        max-width: calc(100vw - 70px);
     }
 }

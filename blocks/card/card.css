@@ -1,13 +1,14 @@
-@import url(../card/__item/card__item.css);
 @import url(../card/__button/card__button.css);
 @import url(../card/__title/card__title.css);
 @import url(../card/__image/card__image.css);
 @import url(../card/__label/card__label.css);
 .card {
-  width: 100%;
   list-style: none;
-  display: flex;
   position: relative;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
 }
 
 .card:hover {

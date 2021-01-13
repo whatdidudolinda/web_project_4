@@ -9,6 +9,8 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    min-height: 120px;
+    max-height: 286px;
     min-width: 252px;
     max-width: 880px;
     margin: auto;
@@ -18,7 +20,8 @@
 @media screen and (max-width: 480px) {
     .profile {
         flex-direction: column;
+        height: 286px;
         align-items: center;
-        position: relative;
+        justify-content: center;
     }
 }
