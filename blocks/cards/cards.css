@@ -1,6 +1,6 @@
-@import url(../elements/__container/elements__container.css);
+@import url(../cards/__container/cards__container.css);
 
-.elements {
+.cards {
     padding-top: 47px;
     padding-bottom: 0;
     max-width: 882px;
@@ -8,14 +8,14 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .elements {
+    .cards{
       padding-right: 48px;
       padding-left: 48px;
     }
   }
   
   @media screen and (max-width: 425px) {
-    .elements {
+    .cards {
       padding-top: 36px;
       padding-right: 19px;
       padding-left: 19px;

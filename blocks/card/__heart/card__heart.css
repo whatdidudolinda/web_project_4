@@ -1,4 +1,4 @@
-.element__heart {
+.card__heart {
     background: url(/images/heart.svg) no-repeat;
     margin: 0;
     padding: 0;
@@ -9,11 +9,11 @@
     cursor: pointer;
 }
 
-.element__heart:hover {
+.card__heart:hover {
     opacity: 0.2;
 }
 
-.element__heart:active {
+.card__heart:active {
     background: url(/images/black-heart.svg) no-repeat;
     opacity: 100;
     border: none;
