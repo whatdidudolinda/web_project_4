@@ -27,6 +27,7 @@ btnClose.addEventListener('click', toggleModalWindow)
 form.addEventListener('submit', function() {
     profileName.textContent = formName.value;
     profileDescri.textContent = formDescri.value;
+    form.reset();
 
     toggleModalWindow()
 })
