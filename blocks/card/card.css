@@ -1,16 +1,15 @@
 @import url(../card/__item/card__item.css);
-@import url(../card/__title/card__title.css);
 @import url(../card/__button/card__button.css);
+@import url(../card/__title/card__title.css);
 @import url(../card/__image/card__image.css);
-@import url(../card/__container/card__container.css);
-
+@import url(../card/__label/card__label.css);
 .card {
-    width: 100%;
-    list-style: none;
-    display: flex;
-    position: relative;
-  }
-  
-  .card:hover {
-    cursor: pointer;
-  }
+  width: 100%;
+  list-style: none;
+  display: flex;
+  position: relative;
+}
+
+.card:hover {
+  cursor: pointer;
+}
