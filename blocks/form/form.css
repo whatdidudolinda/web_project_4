@@ -1,2 +1,22 @@
+@import url(../form/__container/form__container.css);
+@import url(../form/__btn-close/form__btn-close.css);
+@import url(../form/__input_type_description/form__input_type_description.css);
+@import url(../form/__error/form__error.css);
+@import url(../form/__input-field/form__input-field.css);
+@import url(../form/__input/form__input.css);
+@import url(../form/__input_type_name/form__input_type_name.css);
+@import url(../form/__save-button/form__save-button.css);
+@import url(../form/__label/form__label.css);
 @import url(../form/__title/form__title.css);
 @import url(../form/__label/form__label.css);
+
+.form {
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .7);
+    visibility: visible;
+}

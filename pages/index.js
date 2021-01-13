@@ -1,30 +1,32 @@
-const openModalButton = document.querySelector('.profile__edit-button');
-const closeModalButton = document.querySelector('.modal__button');
-const modal = document.querySelector('.modal');
-const form = document.querySelector('.form');
-const nameInput = document.querySelector('.form__input_type_name');
-const descriInput = document.querySelector('.form__input_type_description');
-const profileName = document.querySelector('.profile__name');
-const profileDescri = document.querySelector('.profile__description');
+let editButton = document.querySelector('.profile__edit-button');
+let addButton = document.querySelector('.profile__add-button');
+let profileName = document.querySelector('.profile__name');
+let profileDescri = document.querySelector('.profile__description');
+let form = document.querySelector('.form');
+let btnClose = document.querySelector('.form__btn-close');
+let nameInput = document.querySelector('.form__input_type_name');
+let descriInput = document.querySelector('.form__input_type_description');
 
-function toggleModalWindow() {
-    modal.classList.toggle('modal_open')
+function openForm() {
+    let open = document.querySelector('.profile__edit-button');
+    opened.classList.add('form_opened');
 }
 
-openModalButton.addEventListener('click' , function() {
-    toggleModalWindow()
-    // form.reset();
+function closeForm() {
+    let closed = document.querySelector('.form__btn-close');
+    closed.classList.remove('form_opened');
+}
 
+function handleFormSubmit(evt) {
+    evt.preventDefault();
     nameInput.value = profileName.textContent;
     descriInput.value = profileDescri.textcontent;
-})
-
-
-closeModalButton.addEventListener('click' , toggleModalWindow)
-
-form.addEventListener('click' , function(){
     profileName.textcontent = nameInput.value;
     profileDescri.textcontent = descriInput.value;
+}
 
-    toggleModalWindow()
-})
+// Connect the handler to the form:
+// it will watch the submit event
+editButton.addEventListener('click', openForm);
+btnClose.addEventListener('click', closeForm);
+form.addEventListener('submit', handleFormSubmit);

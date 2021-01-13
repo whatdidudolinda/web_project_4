@@ -1,0 +1,15 @@
+.form__input_type_name {
+    font-weight: normal;
+    border: none;
+    width: 100%;
+    font-size: 14px;
+    line-height: 16.94px;
+    border-bottom: 1px solid #000;
+}
+
+@media screen  and (max-width: 480px) {
+    .form__input_type_name{
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

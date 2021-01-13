@@ -1,0 +1,24 @@
+.form__btn-close {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    position: absolute;
+    top: -48px;
+    right: -48px;
+    height: 40px;
+    width: 40px;
+    background: url(/images/close-icon.svg) center no-repeat;
+    float: right;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+@media screen and (max-width: 480px) {
+    .form__btn-close {
+        width: 26px;
+        height: 26px;
+        background-size: contain;
+        top: -30px;
+        right: -30px;
+    }
+}

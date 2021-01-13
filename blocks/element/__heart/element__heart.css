@@ -6,4 +6,15 @@
     height: 18.13px;
     border: none;
     float: right;
+    cursor: pointer;
+}
+
+.element__heart:hover {
+    opacity: 0.2;
+}
+
+.element__heart:active {
+    background: url(/images/black-heart.svg) no-repeat;
+    opacity: 100;
+    border: none;
 }

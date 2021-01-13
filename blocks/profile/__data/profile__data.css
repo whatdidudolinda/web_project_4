@@ -1,0 +1,6 @@
+.profile__data {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    margin: auto 0 auto 0;
+}

@@ -1,0 +1,24 @@
+.form__container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: auto;
+    margin-top: 30vh;
+    border-radius: 10px;
+    height: min-content;
+    max-height: 330px;
+    width: 430px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .10);
+    box-sizing: border-box;
+    padding: 36px;
+}
+
+@media screen and (max-width: 480px) {
+    .form__container {
+        width: 75%;
+        height: min-content;
+        margin-top: 50%;
+        padding: 30px 20px;
+    }
+}
