@@ -18,12 +18,12 @@
       <div class="profile__container">
         <img class="profile__avatar" src='./images/profile-pic.jpg' alt='Profile Image'>
         <div class="profile__data">
-          <p class="profile__name">Jacques Cousteau</p>
+          <h1 class="profile__name">Jacques Cousteau</h1>
           <p class="profile__description">Explorer</p>
         </div>
-        <button class="profile__edit-button"></button>
+        <button class="profile__edit-button btn-animate"></button>
       </div>
-      <button class="profile__add-button"></button>
+      <button class="profile__add-button btn-animate"></button>
     </div>
     <section class="elements">
       <ul class="elements__container">
@@ -76,31 +76,22 @@
     <p class="footer__copyright">&copy; 2020 Around The U.S.</p>
   </footer>
   <!-- //Modal Content// -->
-  <form class="form form_opened" id="form-edit">
-    <div class="form__container">
-      <button type="button" aria-label="Close Form" class="form__btn-close btn-animate"></button>
+  <div class="popup popup_open">
+    <form action="#" class="form" id="myForm">
+      <div class="form__container">
+        <button type="button" aria-label="Close Form" class="form__btn-close btn-animate"></button>
         <h2 class="form__title">Edit profile</h2>
         <label class="form__input-field">
-            <input id="form-name" name="primary" class="form__input form__input_type_name" type="text" placeholder="Name" required minlength="2" maxlength="40" pattern="[A-Za-z -]*">
+          <input id="form-name" name="primary" class="form__input form__input_type_name" type="text" placeholder="Name"
+            required>
         </label>
         <label class="form__input-field">
-            <input id="form-description" name="secondary" class="form__input form__input_type_description" type="text" placeholder="About me" required minlength="2" maxlength="200">
+          <input id="form-description" name="secondary" class="form__input form__input_type_description" type="text"
+            placeholder="About me" required>
         </label>
         <button type="submit" class="form__save-button btn-animate">Save</button>
-    </div>
-</form>
-  <!-- <div class="modal modal_open">
-    <div class="modal__container">
-      <form action="#" class="form">
-        <h2 class="form__title">Edit profile</h2>
-        <label class="form__label">
-          <input type="text" class="form__input form__input_type_name" placeholder="Name">
-          <input type="text" class="form__input form__input_type_description" placeholder="About me">
-        </label>
-        <button class="modal__btn-close"></button>
-        <button class="modal__submit" type="submit">Save</button>
-    </div>
+      </div>
     </form>
-  </div> -->
+  </div>
   <script src="/pages/index.js"></script>
 </body>
