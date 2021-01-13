@@ -1,4 +1,4 @@
 .modal_open {
-    display: flex;
+    display: block;
     visibility: visible;
 }

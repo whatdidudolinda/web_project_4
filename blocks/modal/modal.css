@@ -1,6 +1,5 @@
 @import url(/blocks/modal/__container/modal__container.css);
 .modal {
-    display: none;
     position: fixed;
     height: 100%;
     width: 100%;
@@ -11,5 +10,4 @@
     overflow: auto;
     justify-content: center;
     align-items: center;
-    z-index: 1;
 }

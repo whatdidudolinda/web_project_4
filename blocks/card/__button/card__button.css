@@ -18,3 +18,9 @@
     opacity: 100;
     border: none;
 }
+
+.card__button.active {
+    background: url(/images/black-heart.svg) no-repeat;
+    opacity: 100;
+    border: none;
+}
