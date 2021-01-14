@@ -1,5 +1,5 @@
 .card__button {
-    background: url(/images/heart.svg) no-repeat;
+    background: url(../../../images/heart.svg) no-repeat;
     margin: 0;
     padding: 0;
     width: 20.76px;
@@ -14,13 +14,13 @@
 }
 
 .card__button:active {
-    background: url(/images/black-heart.svg) no-repeat;
+    background: url(../../../images/black-heart.svg) no-repeat;
     opacity: 100;
     border: none;
 }
 
 .card__button.active {
-    background: url(/images/black-heart.svg) no-repeat;
+    background: url(../../../images/black-heart.svg) no-repeat;
     opacity: 100;
     border: none;
 }
