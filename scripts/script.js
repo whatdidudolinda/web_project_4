@@ -15,19 +15,19 @@ function toggleModalWindow() {
     modal.classList.toggle('modal_open')
 }
 
-editButton.addEventListener('click', function() {
+editButton.addEventListener('click', function () {
     toggleModalWindow()
     formName.value = profileName.textContent;
     formDescription.value = profileDescription.textContent;
-    
+
 })
 
-btnClose.addEventListener('click', toggleModalWindow)
-
-form.addEventListener('submit', function() {
-    profileName.textContent = formName.value;
-    profileDescription.textContent = formDescription.value;
-    form.reset();
-
+function handleFormSubmit(evt) {
+    evt.preventDefault();
     toggleModalWindow();
-})
+    profileName.textContent = `${formName.value}`;
+    profileDescription.textContent = `${formDescription.value}`;
+}
+
+btnClose.addEventListener('click', toggleModalWindow);
+form.addEventListener('submit', handleFormSubmit);
