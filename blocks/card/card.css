@@ -9,6 +9,8 @@
   margin: 0;
   padding: 0;
   background-color: #fff;
+  background-size: 100% auto;
+  max-width: 282px;
 }
 
 .card:hover {
