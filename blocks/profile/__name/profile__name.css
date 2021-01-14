@@ -1,5 +1,4 @@
 .profile__name {
-  display: flex;
   font-size: 42px;
   line-height: 48px;
   padding: 0;
@@ -8,15 +7,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-height: 56px;
-  max-width: 373px;
 }
 
 @media screen and (max-width: 480px) {
   .profile__name {
     font-size: 22px;
     line-height: 26.63px;
-    max-width: 196px;
     margin: 0;
   }
 }
