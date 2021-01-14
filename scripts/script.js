@@ -16,7 +16,7 @@ function toggleModalWindow() {
 }
 
 editButton.addEventListener('click', function () {
-    toggleModalWindow()
+    toggleModalWindow();
     formName.value = profileName.textContent;
     formDescription.value = profileDescription.textContent;
 
