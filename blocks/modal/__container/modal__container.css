@@ -5,12 +5,13 @@
     margin: 30vh auto;
     border-radius: 10px;
     height: min-content;
+    min-width: 282px;
     max-height: 330px;
     width: 430px;
     background-color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, .10);
     box-sizing: border-box;
-    padding: 36px;
+    padding: 34px 36px 36.51px;
 }
 
 @media screen and (max-width: 480px) {

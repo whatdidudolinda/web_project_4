@@ -3,20 +3,22 @@
     height: 40px;
     display: flex;
     position: absolute;
-    top: -48px;
-    right: -48px;
+    top: -40px;
+    right: -40px;
     background: url(../../../images/close-icon.svg) center no-repeat;
+    background-size: contain;
     float: right;
     background-color: rgba(0, 0, 0, 0);
     border: none;
+    padding: 0;
 }
 
 @media screen and (max-width: 480px) {
     .modal__btn-close {
-        width: 26px;
-        height: 26px;
-        background-size: contain;
-        top: -30px;
-        right: -30px;
+        height: 42px;
+        width: 42px;
+        top: -50px;
+        right: -5px;
+        padding: 0;
     }
 }

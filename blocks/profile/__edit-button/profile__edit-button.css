@@ -1,26 +1,26 @@
 .profile__edit-button {
-    border: 1px solid #fff;
-    background: url(../../../images/edit-avatar.png) center no-repeat;
-    width: 24px;
-    height: 24px;
-    outline: 0;
-    padding: 10px;
-    color: white;
-    cursor: pointer;
-    background-size: 10px 10px, cover;
-    margin: 30px 0;
+  border: 1px solid #fff;
+  background: url(../../../images/edit-avatar.png) center no-repeat;
+  width: 24px;
+  height: 24px;
+  outline: 0;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  background-size: 10px 10px, cover;
+  margin: 37px 0;
 }
 
-  @media screen and (max-width: 480px) {
-    .profile__edit-button {
-      position: absolute;
-      background-size: 7px;
-      height: 18px;
-      width: 18px;
-      padding: 2px;
-      margin: 0;
-      right: 0;
-      top: 53%;
-      left: 85%;
-    }
+@media screen and (max-width: 700px)  {
+  .profile__edit-button {
+    position: absolute;
+    background-size: 7px;
+    height: 18px;
+    width: 18px;
+    padding: 2px;
+    margin: 0;
+    right: 0;
+    top: 53%;
+    left: 85%;
   }
+}

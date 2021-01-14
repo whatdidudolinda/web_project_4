@@ -1,5 +1,4 @@
 @import url(../header/__logo/header__logo.css);
-
 .header {
     display: flex;
     position: relative;
@@ -8,4 +7,11 @@
     height: 74px;
     margin: 45px auto 40px;
     border-bottom: 1px solid rgba(84, 84, 84, .7);
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        height: 56px;
+        margin: 28px auto 42px;
+    }
 }
