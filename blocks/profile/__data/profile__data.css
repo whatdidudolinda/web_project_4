@@ -1,8 +1,12 @@
 .profile__data {
     display: flex;
+    position: relative;
     flex-direction: column;
+    min-width: 282px;
+    max-width: 415px;
+    height: 77px;
     font-weight: 500;
-    margin: 22px 0;
+    margin: 22px 18px 0 30px;
 }
 
 @media screen and (max-width: 700px)  {

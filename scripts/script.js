@@ -16,17 +16,17 @@ function toggleModalWindow() {
 }
 
 editButton.addEventListener('click', function () {
-    toggleModalWindow();
     formName.value = profileName.textContent;
     formDescription.value = profileDescription.textContent;
+    toggleModalWindow();
 
 })
 
 function handleFormSubmit(evt) {
     evt.preventDefault();
-    toggleModalWindow();
     profileName.textContent = `${formName.value}`;
     profileDescription.textContent = `${formDescription.value}`;
+    toggleModalWindow();
 }
 
 btnClose.addEventListener('click', toggleModalWindow);

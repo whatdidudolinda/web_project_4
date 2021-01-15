@@ -1,7 +1,7 @@
-@import url(../card/__button/card__button.css);
-@import url(../card/__title/card__title.css);
-@import url(../card/__image/card__image.css);
-@import url(../card/__label/card__label.css);
+@import url(./__button/card__button.css);
+@import url(./__title/card__title.css);
+@import url(./__image/card__image.css);
+@import url(./__label/card__label.css);
 .card {
   list-style: none;
   position: relative;

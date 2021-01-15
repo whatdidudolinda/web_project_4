@@ -1,10 +1,10 @@
-@import url(../profile/__add-button/profile__add-button.css);
-@import url(../profile/__avatar/profile__avatar.css);
-@import url(../profile/__data/profile__data.css);
-@import url(../profile/__description/profile__description.css);
-@import url(../profile/__edit-button/profile__edit-button.css);
-@import url(../profile/__container/profile__container.css);
-@import url(../profile/__name/profile__name.css);
+@import url(./__add-button/profile__add-button.css);
+@import url(./__avatar/profile__avatar.css);
+@import url(./__data/profile__data.css);
+@import url(./__description/profile__description.css);
+@import url(./__edit-button/profile__edit-button.css);
+@import url(./__container/profile__container.css);
+@import url(./__name/profile__name.css);
 .profile {
     display: flex;
     flex-wrap: wrap;
