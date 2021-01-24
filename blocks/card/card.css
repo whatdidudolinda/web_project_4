@@ -1,4 +1,6 @@
-@import url(./__button/card__button.css);
+@import url(./__delete-button/card__delete-button.css);
+@import url(./__like-button/card__like-button.css);
+@import url(./__like-button_active/card__like-button_active.css);
 @import url(./__title/card__title.css);
 @import url(./__image/card__image.css);
 @import url(./__label/card__label.css);

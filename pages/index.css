@@ -8,7 +8,9 @@
 @import url(../blocks/form/form.css);
 @import url(../blocks/btn-animate/btn-animate.css);
 @import url(../blocks/footer/footer.css);
-@import url(../blocks/modal/__btn-close/modal__btn-close.css);
-@import url(../blocks/modal/__container/modal__container.css);
-@import url(../blocks/modal/modal.css);
-@import url(../blocks/modal/_open/modal_open.css);
+@import url(../blocks/popup/__btn-close/popup__btn-close.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__image/popup__image.css);
+@import url(../blocks/popup/__image-title/popup__image-title.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_is-opened/popup_is-opened.css);

@@ -1,4 +1,4 @@
-.modal_open {
+.popup_is-opened {
     display: flex;
     visibility: visible;
 }

@@ -1,0 +1,10 @@
+.form__input_type_title {
+    margin-top: 54px;
+    padding-bottom: 13.26px;
+}
+
+@media screen and (max-width: 480px) {
+    .form__input_type_title {
+        margin-top: 75px;
+    }
+}

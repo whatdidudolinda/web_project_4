@@ -1,4 +1,4 @@
-.card__button {
+.card__like-button {
     background: url(../../../images/heart.svg) no-repeat;
     margin: 31px 18.24px 29.87px;
     padding: 0;
@@ -8,13 +8,7 @@
     float: right;
 }
 
-.card__button:hover {
+.card__like-button:hover  {
     opacity: 0.3;
     cursor: pointer;
-}
-
-.card__button:active {
-    background: url(../../../images/black-heart.svg) no-repeat;
-    opacity: 1;
-    border: none;
 }
