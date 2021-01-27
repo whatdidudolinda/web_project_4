@@ -112,7 +112,7 @@ initialCards.forEach(data => {
 
         popupImage.src = data.link;
         popupImageTitle.textContent = data.name;
-    
+
         toggleModalWindow(imageModalWindow)
     })
     list.prepend(cardElement);
