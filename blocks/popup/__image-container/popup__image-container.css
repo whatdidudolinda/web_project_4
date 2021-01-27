@@ -1,0 +1,14 @@
+.popup__image-container {
+    transform: translateX(-50%);
+    padding: 0;
+    margin: 0;
+    top: 90px;
+    left: 50%;
+    position: absolute;
+}
+
+@media screen and (max-width: 480px) {
+    .popup__image-container {
+        min-width: 250px;
+    }
+}

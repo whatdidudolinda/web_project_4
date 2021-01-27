@@ -11,6 +11,7 @@ const addCardModalButton = document.querySelector('.profile__add-button');
 //closeButtons//
 const closeAddCardModalButton = addCardModalWindow.querySelector('.popup__btn-close');
 const btnClose = document.querySelector('.popup__btn-close');
+const closePopupImage = imageModalWindow.querySelector('.popup__btn-close');
 
 //Profile//
 const profileName = document.querySelector('.profile__name');
@@ -111,9 +112,12 @@ initialCards.forEach(data => {
 
         popupImage.src = data.link;
         popupImageTitle.textContent = data.name;
-
+    
         toggleModalWindow(imageModalWindow)
     })
-
     list.prepend(cardElement);
+})
+
+closePopupImage.addEventListener('click', () => {
+    toggleModalWindow(imageModalWindow)
 })
