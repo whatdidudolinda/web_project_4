@@ -3,6 +3,7 @@ const addCardModalWindow = document.querySelector('.popup_type_add-card');
 const editProfileModalWindow = document.querySelector('.popup_type_edit-profile');
 const form = document.querySelector('.form');
 const imageModalWindow = document.querySelector('.popup_type_image');
+const formAddCard = document.querySelector('.form_add-card');
 
 //openButtons//
 const editButton = document.querySelector('.profile__edit-button');
@@ -23,8 +24,8 @@ const formDescription = document.querySelector('.form__input_type_description');
 const formTitle = document.querySelector('.form__input_type_title');
 const formUrl = document.querySelector('.form__input_type_url');
 const newData = [{
-    name: "",
-    link: ""
+    name: '',
+    link: ''
 },];
 
 //Popup Toggle//
@@ -52,8 +53,8 @@ btnClose.addEventListener('click', () => {
 });
 
 addCardModalButton.addEventListener('click', () => {
-    formTitle.value = "";
-    formUrl.value = "";
+    formTitle.value = '';
+    formUrl.value = '';
     toggleModalWindow(addCardModalWindow);
 });
 
@@ -129,7 +130,7 @@ closePopupImage.addEventListener('click', () => {
 });
 
 //Add New Card//
-function handleSubmit(evt) {
+function createNewCard(evt) {
     evt.preventDefault();
     const newCardElement = cardTemplate.cloneNode(true);
 
@@ -164,4 +165,6 @@ function handleSubmit(evt) {
     });
 
     list.prepend(newCardElement);
-}
+};
+
+formAddCard.addEventListener('submit', createNewCard);
