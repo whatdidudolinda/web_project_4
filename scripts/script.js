@@ -22,6 +22,10 @@ const formName = document.querySelector('.form__input_type_name');
 const formDescription = document.querySelector('.form__input_type_description');
 const formTitle = document.querySelector('.form__input_type_title');
 const formUrl = document.querySelector('.form__input_type_url');
+const newData = [{
+    name: "",
+    link: ""
+}, ];
 
 //Popup Toggle//
 function toggleModalWindow(modal) {
@@ -48,6 +52,8 @@ btnClose.addEventListener('click', () => {
 });
 
 addCardModalButton.addEventListener('click', () => {
+    formTitle.value = "";
+    formUrl.value = "";
     toggleModalWindow(addCardModalWindow)
 })
 
@@ -121,3 +127,41 @@ initialCards.forEach(data => {
 closePopupImage.addEventListener('click', () => {
     toggleModalWindow(imageModalWindow)
 })
+
+//Add New Card//
+function handleSubmit(evt) {
+    evt.preventDefault();
+    const newCardElement = cardTemplate.cloneNode(true);
+
+    const newCardImage = newCardElement.querySelector('.card__image');
+    const newCardTitle = newCardElement.querySelector('.card__title');
+    const newCardLikeButton = newCardElement.querySelector('.card__like-button');
+    const newCardDeleteButton = newCardElement.querySelector('.card__delete-button');
+
+    newData.name = formTitle.value;
+    newData.link = formUrl.value;
+
+    newCardTitle.textContent = newData.name;
+    newCardImage.style.backgroundImage = `url(${newData.link})`;
+
+    newCardLikeButton.addEventListener('click', function (evt) {
+        evt.target.classList.toggle('card__like-button_active')
+    });
+
+    newCardDeleteButton.addEventListener('click', () => {
+        const listItem = newCardDeleteButton.closest('.card');
+        listItem.remove();
+    })
+
+    newCardImage.addEventListener('click', () => {
+        const newPopupImage = imageModalWindow.querySelector('.popup__image');
+        const newPopupImageTitle = imageModalWindow.querySelector('.popup__image-title');
+
+        newPopupImage.src = newData.link;
+        newPopupImageTitle.textContent = newData.name;
+
+        toggleModalWindow(imageModalWindow)
+    });
+
+    list.prepend(newCardElement);
+}
