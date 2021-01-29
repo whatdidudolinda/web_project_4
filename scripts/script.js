@@ -2,7 +2,7 @@
 const addCardModalWindow = document.querySelector('.popup_type_add-card');
 const editProfileModalWindow = document.querySelector('.popup_type_edit-profile');
 const form = document.querySelector('.form');
-const imageModalWindow = document.querySelector('.popup_type_image')
+const imageModalWindow = document.querySelector('.popup_type_image');
 
 //openButtons//
 const editButton = document.querySelector('.profile__edit-button');
@@ -25,7 +25,7 @@ const formUrl = document.querySelector('.form__input_type_url');
 const newData = [{
     name: "",
     link: ""
-}, ];
+},];
 
 //Popup Toggle//
 function toggleModalWindow(modal) {
@@ -54,12 +54,12 @@ btnClose.addEventListener('click', () => {
 addCardModalButton.addEventListener('click', () => {
     formTitle.value = "";
     formUrl.value = "";
-    toggleModalWindow(addCardModalWindow)
-})
+    toggleModalWindow(addCardModalWindow);
+});
 
 closeAddCardModalButton.addEventListener('click', () => {
-    toggleModalWindow(addCardModalWindow)
-})
+    toggleModalWindow(addCardModalWindow);
+});
 
 const initialCards = [
     {
@@ -91,7 +91,7 @@ const initialCards = [
 const cardTemplate = document.querySelector('.card-template').content.querySelector('.card');
 const list = document.querySelector('.cards__list');
 
-//Create Card//
+//Default Cards//
 initialCards.forEach(data => {
     const cardElement = cardTemplate.cloneNode(true);
 
@@ -104,13 +104,13 @@ initialCards.forEach(data => {
     cardImage.style.backgroundImage = `url(${data.link})`;
 
     cardLikeButton.addEventListener('click', function (evt) {
-        evt.target.classList.toggle('card__like-button_active')
+        evt.target.classList.toggle('card__like-button_active');
     });
 
     cardDeleteButton.addEventListener('click', () => {
         const listItem = cardDeleteButton.closest('.card');
         listItem.remove();
-    })
+    });
 
     cardImage.addEventListener('click', () => {
         const popupImage = imageModalWindow.querySelector('.popup__image');
@@ -119,14 +119,14 @@ initialCards.forEach(data => {
         popupImage.src = data.link;
         popupImageTitle.textContent = data.name;
 
-        toggleModalWindow(imageModalWindow)
-    })
+        toggleModalWindow(imageModalWindow);
+    });
     list.prepend(cardElement);
-})
+});
 
 closePopupImage.addEventListener('click', () => {
-    toggleModalWindow(imageModalWindow)
-})
+    toggleModalWindow(imageModalWindow);
+});
 
 //Add New Card//
 function handleSubmit(evt) {
@@ -138,20 +138,20 @@ function handleSubmit(evt) {
     const newCardLikeButton = newCardElement.querySelector('.card__like-button');
     const newCardDeleteButton = newCardElement.querySelector('.card__delete-button');
 
-    newData.name = formTitle.value;
-    newData.link = formUrl.value;
+    newData.name = `${formTitle.value}`;
+    newData.link = `${formUrl.value}`;
 
     newCardTitle.textContent = newData.name;
     newCardImage.style.backgroundImage = `url(${newData.link})`;
 
     newCardLikeButton.addEventListener('click', function (evt) {
-        evt.target.classList.toggle('card__like-button_active')
+        evt.target.classList.toggle('card__like-button_active');
     });
 
     newCardDeleteButton.addEventListener('click', () => {
         const listItem = newCardDeleteButton.closest('.card');
         listItem.remove();
-    })
+    });
 
     newCardImage.addEventListener('click', () => {
         const newPopupImage = imageModalWindow.querySelector('.popup__image');
