@@ -17,7 +17,6 @@ const btnClose = document.querySelector('.popup__btn-close');
 const closePopupImage = imageModalWindow.querySelector('.popup__btn-close');
 
 //Cards//
-const cardTemplate = document.querySelector('.card-template').content.querySelector('.card');
 const list = document.querySelector('.cards__list');
 
 //Profile//
@@ -94,10 +93,11 @@ const initialCards = [
 
 //Card Function//
 initialCards.forEach((data) => {
-    createCard(data);
+    addCard(data);
 });
 
 function createCard(data) {
+    const cardTemplate = document.querySelector('.card-template').content.querySelector('.card');
     const cardElement = cardTemplate.cloneNode(true);
 
     const cardImage = cardElement.querySelector('.card__image');
@@ -107,9 +107,7 @@ function createCard(data) {
 
     cardTitle.textContent = data.name;
     cardImage.style.backgroundImage = `url(${data.link})`;
-    cardImage.src = data.link;
     cardImage.alt = data.name;
-    list.prepend(cardElement);
 
     cardLikeButton.addEventListener('click', function (evt) {
         evt.target.classList.toggle('card__like-button_active');
