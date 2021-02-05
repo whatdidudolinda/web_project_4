@@ -22,8 +22,8 @@
           <h1 class="profile__name">Jacques Cousteau</h1>
           <p class="profile__description">Explorer</p>
         </div>
-        <button class="profile__edit-button btn-animate" aria-label="Edit" type="button"></button>
-        <button class="profile__add-button btn-animate" aria-label="Add" type="button"></button>
+        <button class="profile__edit-button" aria-label="Edit" type="button"></button>
+        <button class="profile__add-button" aria-label="Add" type="button"></button>
       </div>
     </section>
     <!-- //Cards// -->
@@ -40,12 +40,17 @@
   <div class="popup popup_type_edit-profile">
     <div class="popup__container">
       <form action="#" class="form" method="POST" name="myForm">
-        <button type="button" aria-label="Close Form" class="popup__btn-close btn-animate"></button>
+        <button type="button" aria-label="Close Form" class="popup__btn-close"></button>
         <h3 class="form__title">Edit profile</h3>
-        <input name="primary" class="form__input form__input_type_name" type="text" placeholder="Name" required>
-        <input name="secondary" class="form__input form__input_type_description" type="text" placeholder="About me"
-          required>
-        <button type="submit" class="form__save-button btn-animate">Save</button>
+        <input id="profile-name" name="primary" class="form__input form__input_type_name" type="text" minlength="2" maxlength="40"
+          placeholder="Name" required>
+        <span id="profile-name-error" class="popup__error"></span>
+
+        <input id="profile-text" name="secondary" class="form__input form__input_type_description" minlength="2" maxlength="200"
+          type="text" placeholder="About me" required>
+          <span id="profile-text-error" class="popup__error"></span>
+
+        <button type="submit" class="form__save-button popup__button">Save</button>
       </form>
     </div>
   </div>
@@ -53,18 +58,23 @@
   <div class="popup popup_type_add-card">
     <div class="popup__container">
       <form action="#" class="form form_add-card" method="POST" name="myCardForm">
-        <button type="button" aria-label="Close Form" class="popup__btn-close btn-animate"></button>
+        <button type="button" aria-label="Close Form" class="popup__btn-close"></button>
         <h3 class="form__title">New Place</h3>
-        <input name="primary" class="form__input form__input_type_title" type="text" placeholder="Title" required>
-        <input name="secondary" class="form__input form__input_type_url" type="url" placeholder="Image link" required>
-        <button type="submit" class="form__save-button btn-animate" id="myCreateBtn">Create</button>
+        <input id="card-title" name="primary" class="form__input form__input_type_title" type="text" minlength="1" maxlength="30"
+          placeholder="Title" required>
+          <span id="card-title-error" class="popup__error"></span>
+
+        <input id="card-url" name="secondary" class="form__input form__input_type_url" type="url" placeholder="Image link" required>
+        <span id="card-url-error" class="popup__error"></span>
+
+        <button type="submit" class="form__save-button popup__button" id="myCreateBtn">Create</button>
       </form>
     </div>
   </div>
 
   <div class="popup popup_type_image">
     <div class="popup__image-container">
-      <button type="button" aria-label="Close Form" class="popup__btn-close btn-animate"></button>
+      <button type="button" aria-label="Close Form" class="popup__btn-close"></button>
       <figure class="popup__figure">
         <img class="popup__image" src="//:0" alt="popup-image">
         <figcaption class="popup__image-title"></figcaption>
@@ -84,6 +94,7 @@
     </li>
   </template>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/validation.js"></script>
 </body>
 
 </html>
