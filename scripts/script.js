@@ -163,6 +163,6 @@ addCardModalButton.addEventListener('click', () => {
     toggleModalWindow(addCardModalWindow);
 });
 
-// closeAddCardModalButton.addEventListener('click', () => {
-//     toggleModalWindow(addCardModalWindow);
-// });
+closeAddCardModalButton.addEventListener('click', () => {
+    toggleModalWindow(addCardModalWindow);
+});
