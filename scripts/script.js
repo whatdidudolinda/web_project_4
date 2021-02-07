@@ -38,6 +38,12 @@ function toggleModalWindow(modal) {
     modal.classList.toggle('popup_is-opened');
 }
 
+document.addEventListener('click', function (event) {
+    if (!event.target.closest('.popup')) {
+        closePopup(modal);
+    }
+});
+
 function closePopup(modal) {
     modal.classList.remove('popup_is-opened');
 }
@@ -146,7 +152,16 @@ function handleSubmit(evt) {
     toggleModalWindow(addCardModalWindow);
 }
 
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
+    const key = event.key;
+    if (event.key === 'Escape') {
+        closePopup(addCardModalWindow);
+        closePopup(editProfileModalWindow);
+        closePopup(imageModalWindow);
+    }
+});
+
+document.addEventListener('click', function (event) {
     const key = event.key;
     if (event.key === 'Escape') {
         closePopup(addCardModalWindow);
