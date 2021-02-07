@@ -11,6 +11,11 @@ const popupImageTitle = imageModalWindow.querySelector('.popup__image-title');
 const editButton = document.querySelector('.profile__edit-button');
 const addCardModalButton = document.querySelector('.profile__add-button');
 
+//Overlays//
+const editPopupOverlay = document.querySelector('.popup_type_edit-profile');
+const addCardPopupOverlay = document.querySelector('.popup_type_add-card');
+const imagePopupOverlay = document.querySelector('.popup_type_image');
+
 //closeButtons//
 const closeAddCardModalButton = addCardModalWindow.querySelector('.popup__btn-close');
 const btnClose = document.querySelector('.popup__btn-close');
@@ -37,12 +42,6 @@ const data = [{
 function toggleModalWindow(modal) {
     modal.classList.toggle('popup_is-opened');
 }
-
-document.addEventListener('click', function (event) {
-    if (!event.target.closest('.popup')) {
-        closePopup(modal);
-    }
-});
 
 function closePopup(modal) {
     modal.classList.remove('popup_is-opened');
@@ -161,12 +160,21 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-document.addEventListener('click', function (event) {
-    const key = event.key;
-    if (event.key === 'Escape') {
-        closePopup(addCardModalWindow);
-        closePopup(editProfileModalWindow);
-        closePopup(imageModalWindow);
+editPopupOverlay.addEventListener('click', (evt) => {
+    if(evt.target != 'editPopupOverlay') {
+    closePopup(editPopupOverlay);
+    }
+});
+
+imagePopupOverlay.addEventListener('click', (evt) => {
+    if(evt.target != 'imagePopupOverlay') {
+    closePopup(imagePopupOverlay);
+    }
+});
+
+addCardPopupOverlay.addEventListener('click', (evt) => {
+    if(evt.target != 'addCardPopupOverlay') {
+    closePopup(addCardPopupOverlay);
     }
 });
 
