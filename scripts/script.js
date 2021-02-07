@@ -38,6 +38,10 @@ function toggleModalWindow(modal) {
     modal.classList.toggle('popup_is-opened');
 }
 
+function closePopup(modal) {
+    modal.classList.remove('popup_is-opened');
+}
+
 closePopupImage.addEventListener('click', () => {
     toggleModalWindow(imageModalWindow);
 });
@@ -142,6 +146,15 @@ function handleSubmit(evt) {
     toggleModalWindow(addCardModalWindow);
 }
 
+document.addEventListener('keydown', function(event) {
+    const key = event.key;
+    if (event.key === 'Escape') {
+        closePopup(addCardModalWindow);
+        closePopup(editProfileModalWindow);
+        closePopup(imageModalWindow);
+    }
+});
+
 formAddCard.addEventListener('submit', handleSubmit);
 
 addCardModalButton.addEventListener('click', () => {
@@ -150,6 +163,6 @@ addCardModalButton.addEventListener('click', () => {
     toggleModalWindow(addCardModalWindow);
 });
 
-closeAddCardModalButton.addEventListener('click', () => {
-    toggleModalWindow(addCardModalWindow);
-});
+// closeAddCardModalButton.addEventListener('click', () => {
+//     toggleModalWindow(addCardModalWindow);
+// });
