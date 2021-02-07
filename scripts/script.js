@@ -161,19 +161,19 @@ document.addEventListener('keydown', function (event) {
 });
 
 editPopupOverlay.addEventListener('click', (evt) => {
-    if(evt.target != 'editPopupOverlay') {
+    if(evt.target === editPopupOverlay) {
     closePopup(editPopupOverlay);
     }
 });
 
 imagePopupOverlay.addEventListener('click', (evt) => {
-    if(evt.target != 'imagePopupOverlay') {
+    if(evt.target === imagePopupOverlay) {
     closePopup(imagePopupOverlay);
     }
 });
 
 addCardPopupOverlay.addEventListener('click', (evt) => {
-    if(evt.target != 'addCardPopupOverlay') {
+    if(evt.target === addCardPopupOverlay) {
     closePopup(addCardPopupOverlay);
     }
 });
