@@ -14,7 +14,6 @@ function hideErrorMessage (input, form, {errorClass,inputErrorClass, ...rest}) {
     input.classList.remove(inputErrorClass);
 }
 
-
 function checkInputValidity(input, form, rest) {
     if(input.validity.valid) {
         hideErrorMessage(input, form, rest)
@@ -27,10 +26,10 @@ function toggleButtonState(inputs, button, {inactiveButtonClass, ...rest}) {
     const isValid = inputs.every((input) => input.validity.valid);
 
     if(isValid) {
-        button.classList.remove(inactiveButtonClass);
+        button.classList.add(inactiveButtonClass);
         button.disabled = true;
     } else {
-        button.classList.add(inactiveButtonClass);
+        button.classList.remove(inactiveButtonClass);
         button.disabled = false;
     }
 }

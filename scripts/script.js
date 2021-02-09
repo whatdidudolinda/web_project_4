@@ -131,6 +131,7 @@ function closePopup(modal) {
     modal.classList.remove('popup_is-opened');
     document.removeEventListener('keydown', keyPress);
 }
+
 //Esc Function//
 function keyPress (e) {
     const modal = document.querySelector('.popup_is-opened')
