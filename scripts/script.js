@@ -42,51 +42,6 @@ const data = [{
     link: ''
 },];
 
-//Popup Toggle//
-function openPopup(modal) {
-    modal.classList.add('popup_is-opened');
-    document.addEventListener('keydown', keyPress);
-}
-
-function closePopup(modal) {
-    modal.classList.remove('popup_is-opened');
-    document.removeEventListener('keydown', keyPress);
-}
-//Esc Function//
-function keyPress (e) {
-    const modal = document.querySelector('.popup_is-opened')
-    if(e.key === "Escape") {
-        closePopup(modal);
-    }
-}
-
-closePopupImage.addEventListener('click', () => {
-    closePopup(imageModalWindow);
-});
-
-//Profile//
-function handleFormSubmit(evt) {
-    evt.preventDefault();
-    profileName.textContent = `${formName.value}`;
-    profileDescription.textContent = `${formDescription.value}`;
-    toggleButtonState();
-    openPopup(editProfileModalWindow);
-}
-
-form.addEventListener('submit', handleFormSubmit);
-
-editButton.addEventListener('click', () => {
-    if (!editProfileModalWindow.classList.contains('popup_is')) {
-        formName.value = profileName.textContent;
-        formDescription.value = profileDescription.textContent;
-    }
-    openPopup(editProfileModalWindow);
-});
-
-btnClose.addEventListener('click', () => {
-    closePopup(editProfileModalWindow);
-});
-
 const initialCards = [
     {
         name: 'Yosemite Valley',
@@ -155,15 +110,36 @@ function addCard(data) {
     list.prepend(cardElement);
 };
 
-function handleSubmit(evt) {
+function cardSubmit(evt) {
     evt.preventDefault();
     addCard({
         name: formTitle.value,
         link: formUrl.value
     });
-    openPopup(addCardModalWindow);
+    closePopup(addCardModalWindow);
 }
 
+formAddCard.addEventListener('submit', cardSubmit);
+
+//Popup Toggle//
+function openPopup(modal) {
+    modal.classList.add('popup_is-opened');
+    document.addEventListener('keydown', keyPress);
+}
+
+function closePopup(modal) {
+    modal.classList.remove('popup_is-opened');
+    document.removeEventListener('keydown', keyPress);
+}
+//Esc Function//
+function keyPress (e) {
+    const modal = document.querySelector('.popup_is-opened')
+    if(e.key === "Escape") {
+        closePopup(modal);
+    }
+}
+
+//Popup Overlay Close//
 editPopupOverlay.addEventListener('click', (evt) => {
     if(evt.target === editPopupOverlay) {
     closePopup(editPopupOverlay);
@@ -182,14 +158,40 @@ addCardPopupOverlay.addEventListener('click', (evt) => {
     }
 });
 
-formAddCard.addEventListener('submit', handleSubmit);
+//Close Popups//
+closePopupImage.addEventListener('click', () => {
+    closePopup(imageModalWindow);
+});
+
+closeAddCardModalButton.addEventListener('click', () => {
+    closePopup(addCardModalWindow);
+});
+
+btnClose.addEventListener('click', () => {
+    closePopup(editProfileModalWindow);
+});
+
+//Profile//
+function profileSubmit(evt) {
+    evt.preventDefault();
+    profileName.textContent = `${formName.value}`;
+    profileDescription.textContent = `${formDescription.value}`;
+    closePopup(editProfileModalWindow);
+}
+
+form.addEventListener('submit', profileSubmit);
+
+//Open Edit Profile & Add Card//
+editButton.addEventListener('click', () => {
+    if (!editProfileModalWindow.classList.contains('popup_is')) {
+        formName.value = profileName.textContent;
+        formDescription.value = profileDescription.textContent;
+    }
+    openPopup(editProfileModalWindow);
+});
 
 addCardModalButton.addEventListener('click', () => {
     formTitle.value = '';
     formUrl.value = '';
     openPopup(addCardModalWindow);
-});
-
-closeAddCardModalButton.addEventListener('click', () => {
-    closePopup(addCardModalWindow);
 });
