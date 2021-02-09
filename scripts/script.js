@@ -43,8 +43,8 @@ const data = [{
 },];
 
 //Popup Toggle//
-function toggleModalWindow(modal) {
-    modal.classList.toggle('popup_is-opened');
+function openPopup(modal) {
+    modal.classList.add('popup_is-opened');
     document.addEventListener('keydown', keyPress);
 }
 
@@ -61,8 +61,7 @@ function keyPress (e) {
 }
 
 closePopupImage.addEventListener('click', () => {
-    toggleModalWindow(imageModalWindow);
-    document.removeEventListener('keydown', keyPress);
+    closePopup(imageModalWindow);
 });
 
 //Profile//
@@ -71,7 +70,7 @@ function handleFormSubmit(evt) {
     profileName.textContent = `${formName.value}`;
     profileDescription.textContent = `${formDescription.value}`;
     toggleButtonState();
-    toggleModalWindow(editProfileModalWindow);
+    openPopup(editProfileModalWindow);
 }
 
 form.addEventListener('submit', handleFormSubmit);
@@ -81,11 +80,11 @@ editButton.addEventListener('click', () => {
         formName.value = profileName.textContent;
         formDescription.value = profileDescription.textContent;
     }
-    toggleModalWindow(editProfileModalWindow);
+    openPopup(editProfileModalWindow);
 });
 
 btnClose.addEventListener('click', () => {
-    toggleModalWindow(editProfileModalWindow);
+    closePopup(editProfileModalWindow);
 });
 
 const initialCards = [
@@ -145,8 +144,7 @@ function createCard(data) {
     cardImage.addEventListener('click', () => {
         popupImage.src = data.link;
         popupImageTitle.textContent = data.name;
-        toggleButtonState();
-        toggleModalWindow(imageModalWindow);
+        openPopup(imageModalWindow);
     })
 
     return cardElement;
@@ -163,8 +161,7 @@ function handleSubmit(evt) {
         name: formTitle.value,
         link: formUrl.value
     });
-    toggleButtonState();
-    toggleModalWindow(addCardModalWindow);
+    openPopup(addCardModalWindow);
 }
 
 editPopupOverlay.addEventListener('click', (evt) => {
@@ -190,9 +187,9 @@ formAddCard.addEventListener('submit', handleSubmit);
 addCardModalButton.addEventListener('click', () => {
     formTitle.value = '';
     formUrl.value = '';
-    toggleModalWindow(addCardModalWindow);
+    openPopup(addCardModalWindow);
 });
 
 closeAddCardModalButton.addEventListener('click', () => {
-    toggleModalWindow(addCardModalWindow);
+    closePopup(addCardModalWindow);
 });
