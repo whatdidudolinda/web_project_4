@@ -6,10 +6,14 @@ const imageModalWindow = document.querySelector('.popup_type_image');
 const formAddCard = document.querySelector('.form_add-card');
 const popupImage = imageModalWindow.querySelector('.popup__image');
 const popupImageTitle = imageModalWindow.querySelector('.popup__image-title');
+const popupContainer = document.querySelector('.popup__container');
 
 //openButtons//
 const editButton = document.querySelector('.profile__edit-button');
 const addCardModalButton = document.querySelector('.profile__add-button');
+
+//saveButton//
+const saveButton = document.querySelector('.form__save-button');
 
 //Overlays//
 const editPopupOverlay = document.querySelector('.popup_type_edit-profile');
@@ -41,14 +45,24 @@ const data = [{
 //Popup Toggle//
 function toggleModalWindow(modal) {
     modal.classList.toggle('popup_is-opened');
+    document.addEventListener('keydown', keyPress);
 }
 
 function closePopup(modal) {
     modal.classList.remove('popup_is-opened');
+    document.removeEventListener('keydown', keyPress);
+}
+//Esc Function//
+function keyPress (e) {
+    const modal = document.querySelector('.popup_is-opened')
+    if(e.key === "Escape") {
+        closePopup(modal);
+    }
 }
 
 closePopupImage.addEventListener('click', () => {
     toggleModalWindow(imageModalWindow);
+    document.removeEventListener('keydown', keyPress);
 });
 
 //Profile//
@@ -56,6 +70,7 @@ function handleFormSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = `${formName.value}`;
     profileDescription.textContent = `${formDescription.value}`;
+    toggleButtonState();
     toggleModalWindow(editProfileModalWindow);
 }
 
@@ -130,7 +145,7 @@ function createCard(data) {
     cardImage.addEventListener('click', () => {
         popupImage.src = data.link;
         popupImageTitle.textContent = data.name;
-
+        toggleButtonState();
         toggleModalWindow(imageModalWindow);
     })
 
@@ -148,17 +163,9 @@ function handleSubmit(evt) {
         name: formTitle.value,
         link: formUrl.value
     });
+    toggleButtonState();
     toggleModalWindow(addCardModalWindow);
 }
-
-document.addEventListener('keydown', function (event) {
-    const key = event.key;
-    if (event.key === 'Escape') {
-        closePopup(addCardModalWindow);
-        closePopup(editProfileModalWindow);
-        closePopup(imageModalWindow);
-    }
-});
 
 editPopupOverlay.addEventListener('click', (evt) => {
     if(evt.target === editPopupOverlay) {

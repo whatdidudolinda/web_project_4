@@ -12,6 +12,7 @@
     font-weight: normal;
     border: none;
     transition: opacity .3s linear;
+    clear: top;
 }
 
 .form__save-button:hover {
