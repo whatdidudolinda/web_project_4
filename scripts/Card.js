@@ -1,29 +1,10 @@
+import { imageModalWindow, openPopup, closePopup, keyPress } from './utils.js'
+
 class Card {
-    constructor(data, templateSelector) {
+    constructor(data, cardTemplateSelector) {
         this._link = data.link;
         this._name = data.name;
-        this._templateSelector = templateSelector;
-    }
-    _getCardTemplate() {
-        const cardTemplate = document.querySelector(this._templateSelector).content.querySelector('.card').cloneNode(true);
-
-        return cardTemplate;
-    }
-
-    _handleLikeIcon() {
-        evt.target.classList.toggle('card__like-button_active');
-    }
-
-    _handleDeleteCard() {
-        const listItem = cardDeleteButton.closest('.card');
-        listItem.remove();
-    }
-
-    _handlePreviewPicture() {
-        cardTitle.textContent = this._name;
-        cardImage.style.backgroundImage = `url(${this._link})`;
-        cardImage.alt = this._name;
-        openPopup(imageModalWindow);
+        this._cardTemplateSelector = cardTemplateSelector;
     }
 
     _setEventListeners() {
@@ -36,22 +17,45 @@ class Card {
         cardImage.addEventListener('click', this._handlePreviewPicture);
     }
 
+    _handleLikeIcon(evt) {
+        evt.target.classList.toggle('card__like-button_active');
+    }
+
+    _handleDeleteCard(evt) {
+        evt.target.closest('.card').remove();
+    }
+
+    _handlePreviewPicture() {
+        const cardImage = document.querySelector('.card__image');
+        const cardTitle = document.querySelector('.card__title');
+        const popupImageTitle = imageModalWindow.querySelector('.popup__image-title');
+        const popupImage = imageModalWindow.querySelector('.popup__image');
+
+
+        popupImage.src = cardImage.src;
+        popupImageTitle.textContent = cardTitle.textContent;
+        popupImage.alt = cardTitle.textContent;
+
+        openPopup(imageModalWindow);
+    }
+
+    _getCardTemplate() {
+        const cardTemplate = document.querySelector(this._cardTemplateSelector).content.querySelector('.card');
+
+        return cardTemplate;
+    }
+
     generateCard() {
         this._card = this._getCardTemplate().cloneNode(true);
-        this._setEventListeners();
-
         const cardImage = this._card.querySelector('.card__image');
         const cardTitle = this._card.querySelector('.card__title');
 
-        cardTitle.textContent = this._name;
         cardImage.style.backgroundImage = `url(${this._link})`;
+        cardImage.src = this._link;
         cardImage.alt = this._name;
+        cardTitle.textContent = this._name;
 
-        cardImage.addEventListener('click', () => {
-            popupImage.src = this._link;
-            popupImageTitle.textContent = this._name;
-            openPopup(imageModalWindow);
-        })
+        this._setEventListeners();
 
         return this._card;
     }

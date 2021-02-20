@@ -1,76 +1,61 @@
 class FormValidator {
-    constructor(settings, form) {
-        this._inputSelector = settings.inputSelector;
-        this._submitButtonSelector = settings.submitButtonSelector;
-        this._inactiveButtonClass = settings.inactiveButtonClass;
-        this._inputErrorClass = settings.inputErrorClass;
-        this._errorClass = settings.errorClass;
-
-        this._form = form;
+    constructor(settings, formElement) {
+        this._settings = settings;
+        this._formElement = formElement;
     }
 
-    _showErrorMessage(input, { errorClass, inputErrorClass, ...rest }) {
-        const error = this._form.querySelector(`#${input.id}-error`);
-
+    _showErrorMessage(input) {
+        const error = this._formElement.querySelector(`#${input.id}-error`);
+        input.classList.add(this._settings.inputErrorClass);
         error.textContent = input.validationMessage;
-        input.classList.add(this._inputErrorClass);
-        error.classList.add(this._errorClass);
+        error.classList.add(this._settings.errorClass);
     }
-
-    _hideErrorMessage(input, { errorClass, inputErrorClass, ...rest }) {
-        const error = this._form.querySelector(`#${input.id}-error`);
-
+    _hideErrorMessage(input) {
+        const error = this._formElement.querySelector(`#${input.id}-error`);
+        input.classList.remove(this._settings.inputErrorClass);
+        error.classList.remove(this._settings.errorClass);
         error.textContent = '';
-        error.classList.remove(this._errorClass);
-        input.classList.remove(this._inputErrorClass);
     }
+    _checkInputValidity(input) {
+        if (!input.validity.valid) {
+            this._showErrorMessage(input, input.validationMessage);
 
-    _checkInputValidity(input, form, rest) {
-        if (input.validity.valid) {
-            this._hideErrorMessage(input, form, rest)
         } else {
-            this._showErrorMessage(input, form, rest)
+            this._hideErrorMessage(input);
         }
     }
-
-    _toggleButtonState(inputs, button, { inactiveButtonClass, ...rest }) {
-        const isValid = inputs.every((input) => input.validity.valid);
-
-        if (isValid) {
-            button.classList.add(this._inactiveButtonClass);
+    _hasInvalidInput(inputs) {
+        return inputs.some((input) => {
+            return !input.validity.valid;
+        });
+    }
+    _toggleButtonState(inputs, button) {
+        if (this._hasInvalidInput(inputs)) {
+            button.classList.add(this._settings.inactiveButtonClass);
             button.disabled = true;
         } else {
-            button.classList.remove(this._inactiveButtonClass);
+            button.classList.remove(this._settings.inactiveButtonClass);
             button.disabled = false;
         }
     }
-
     _setEventListeners() {
-        const inputs = Array.form(this._form.querySelectorAll(this._inputSelector));
-        const button = this._form.querySelector(this._submitButtonSelector);
+        const inputs = Array.from(this._formElement.querySelectorAll(this._settings.inputSelector))
+        const button = this._formElement.querySelector(this._settings.submitButtonSelector);
 
         inputs.forEach((input) => {
             input.addEventListener('input', () => {
-                this._checkInputValidity();
-                this._toggleButtonState();
+                this._checkInputValidity(input);
+                this._toggleButtonState(inputs, button, this._settings.inactiveButtonClass);
             });
         });
     }
-
     enableValidation() {
-        this._form.addEventListener('submit', (e) => {
+        this._formElement.addEventListener('submit', (e) => {
             e.preventDefault();
         });
 
-        inputs.forEach((input) => {
-            input.addEventListener('input', () => {
-                checkInputValidity(input, form, rest);
-                toggleButtonState(inputs, button, rest);
-            });
-            this._setEventListeners(); 
-        });
-    };
+        this._setEventListeners();
+    }
 }
-
 
 export default FormValidator;
