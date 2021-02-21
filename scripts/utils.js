@@ -16,3 +16,6 @@ export function keyPress(e) {
         closePopup(modal);
     }
 }
+
+export const popupImageTitle = imageModalWindow.querySelector('.popup__image-title');
+export const popupImage = imageModalWindow.querySelector('.popup__image');
