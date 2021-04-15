@@ -1,13 +1,11 @@
-import './styles/index.css';
-
 import { imageModalWindow, openPopup, closePopup, keyPress } from './utils.js'
 import FormValidator from './FormValidator.js';
 import Card from './Card.js';
 import { initialCards } from './array.js';
-import PopupWithForm from './PopupWithForm';
-import PopupWithimage from './PopupWithImage';
-import Section from './Section';
-import UserInfo from './UserInfo';
+import PopupWithForm from './PopupWithForm.js';
+import PopupWithimage from './PopupWithImage.js';
+import Section from './Section.js';
+import UserInfo from './UserInfo.js';
 
 const editProfilePopup = new PopupWithForm({
     popupSelector: '.popup_type_edit-profile',
