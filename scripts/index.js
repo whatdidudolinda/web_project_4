@@ -15,9 +15,10 @@ const editProfilePopup = new PopupWithForm({
 });
 
 editProfilePopup.setEventListeners();
-editButton.addEventListener('click', (evt) => {
+addCardModalButton.addEventListener('click', (e) => {
     editProfilePopup.open();
 })
+
 const addForm = addPopup.querySelector('.form_type_add');
 
 const section = new Section({
