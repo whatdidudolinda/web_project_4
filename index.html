@@ -60,11 +60,11 @@
       <form action="#" class="form form_add-card" method="POST" name="myCardForm">
         <button type="button" aria-label="Close Form" class="popup__btn-close"></button>
         <h3 class="form__title">New Place</h3>
-        <input id="card-title" name="primary" class="form__input form__input_type_title" type="text" minlength="1" maxlength="30"
+        <input id="card-title" name="name" class="form__input form__input_type_title" type="text" minlength="1" maxlength="30"
           placeholder="Title" required>
           <span id="card-title-error" class="popup__error"></span>
 
-        <input id="card-url" name="secondary" class="form__input form__input_type_url" type="url" placeholder="Image link" required>
+        <input id="card-url" name="description" class="form__input form__input_type_url" type="url" placeholder="Image link" required>
         <span id="card-url-error" class="popup__error"></span>
 
         <button type="submit" class="form__save-button popup__button" id="myCreateBtn">Create</button>

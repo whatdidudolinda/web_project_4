@@ -2,6 +2,60 @@ import { imageModalWindow, openPopup, closePopup, keyPress } from './utils.js'
 import FormValidator from './FormValidator.js';
 import Card from './Card.js';
 import { initialCards } from './array.js';
+import PopupWithForm from './PopupWithForm';
+import PopupWithimage from './PopupWithImage';
+import Section from './Section';
+import UserInfo from './UserInfo';
+
+const editProfilePopup = new PopupWithForm({
+    popupSelector: '.popup_type_edit-profile',
+    handleFormSubmit: ({ name, description }) => {
+        userInfo.setUserInfo(name, description);
+    },
+});
+
+editProfilePopup.setEventListeners();
+editButton.addEventListener('click', (evt) => {
+    editProfilePopup.open();
+})
+const addForm = addPopup.querySelector('.form_type_add');
+
+const section = new Section({
+    items: initialCards,
+    renderer: (items) => {
+        const card = new Card({
+            data: items,
+            handleCardClick: (link, name) => {
+                imagePopup.open(link, name);
+            }
+        }, '.card-template');
+        list.addItem(card.createCard());
+    }
+}, '.card')
+
+list.renderItems();
+
+const addCardPopup = new PopupWithForm({
+    popupSelector: '.popup_type_add-card',
+
+    handleFormSubmit: (items) => {
+        const card = new Card({
+            data: items,
+            handleCardClick: (link, name) => {
+                imagePopup.open(link, name);
+            }
+        }, '.card-template');
+        list.prependItem(card.createCard(items));
+    }
+});
+
+const imagePopup = new PopupWithimage('.popup_type_image');
+imagePopup.setEventListeners();
+
+const userInfo = new UserInfo({
+    profileNameSelector: '.profile__name',
+    profileDescriptionSelector: '.profile__description'
+});
 
 //Wrappers// 
 const addCardModalWindow = document.querySelector('.popup_type_add-card');
@@ -45,12 +99,12 @@ const data = [{
 },];
 
 const settings = {
-    formSelector: ".form",
-    inputSelector: ".form__input",
-    submitButtonSelector: ".form__save-button",
-    inactiveButtonClass: "form__save-button_disabled",
-    inputErrorClass: "form__input_type_error",
-    errorClass: "popup__error_visible"
+    formSelector: '.form',
+    inputSelector: '.form__input',
+    submitButtonSelector: '.form__save-button',
+    inactiveButtonClass: 'form__save-button_disabled',
+    inputErrorClass: 'form__input_type_error',
+    errorClass: 'popup__error_visible'
 }
 
 const editProfileValidator = new FormValidator(settings, document.querySelector('.form_edit'));
@@ -72,7 +126,7 @@ function addCard(evt) {
         link: formUrl.value
     };
 
-    const newCard = new Card(addCardData, ".card-template");
+    const newCard = new Card(addCardData, '.card-template');
     list.prepend(newCard.generateCard());
     closePopup(addCardModalWindow);
 };
