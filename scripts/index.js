@@ -1,3 +1,5 @@
+import './styles/index.css';
+
 import { imageModalWindow, openPopup, closePopup, keyPress } from './utils.js'
 import FormValidator from './FormValidator.js';
 import Card from './Card.js';
@@ -37,7 +39,6 @@ list.renderItems();
 
 const addCardPopup = new PopupWithForm({
     popupSelector: '.popup_type_add-card',
-
     handleFormSubmit: (items) => {
         const card = new Card({
             data: items,
@@ -105,7 +106,7 @@ const settings = {
     inactiveButtonClass: 'form__save-button_disabled',
     inputErrorClass: 'form__input_type_error',
     errorClass: 'popup__error_visible'
-}
+};
 
 const editProfileValidator = new FormValidator(settings, document.querySelector('.form_edit'));
 const addCardValidator = new FormValidator(settings, document.querySelector('.form_add-card'));
