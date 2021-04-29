@@ -15,11 +15,6 @@ const editProfilePopup = new PopupWithForm({
 });
 
 editProfilePopup.setEventListeners();
-addCardModalButton.addEventListener('click', (e) => {
-    editProfilePopup.open();
-})
-
-const addForm = addPopup.querySelector('.form_type_add');
 
 const section = new Section({
     items: initialCards,
@@ -33,8 +28,6 @@ const section = new Section({
         list.addItem(card.createCard());
     }
 }, '.card')
-
-list.renderItems();
 
 const addCardPopup = new PopupWithForm({
     popupSelector: '.popup_type_add-card',
