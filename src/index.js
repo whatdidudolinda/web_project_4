@@ -1,9 +1,9 @@
 import './styles/index.css';
 
-import { imageModalWindow, openPopup, closePopup, keyPress } from './utils.js'
+import { imageModalWindow, openPopup, closePopup, keyPress } from '../components/utils.js'
 import FormValidator from '../components/FormValidator.js';
 import Card from '../components/Card.js';
-import { initialCards } from './array.js';
+import { initialCards } from '../components/array.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithimage from '../components/PopupWithImage.js';
 import Section from '../components/Section.js';
