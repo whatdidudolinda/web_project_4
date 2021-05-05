@@ -5,7 +5,7 @@
     position: absolute;
     top: -42px;
     right: -42px;
-    background: url(../../../images/close-icon.svg) center no-repeat;
+    background: url(../../../src/images/close-icon.svg) center no-repeat;
     background-size: cover;
     float: right;
     background-color: rgba(0, 0, 0, 0);

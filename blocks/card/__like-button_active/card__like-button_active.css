@@ -1,4 +1,4 @@
 .card__like-button_active {
-    background: url(../../../images/black-heart.svg) no-repeat;
+    background: url(../../../src/images/black-heart.svg) no-repeat;
     opacity: 1;
 }
