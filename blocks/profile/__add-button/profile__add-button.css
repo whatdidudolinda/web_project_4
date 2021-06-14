@@ -1,6 +1,6 @@
 .profile__add-button {
     position: relative;
-    background: url(../../../images/add-button.svg) center no-repeat;
+    background: url(../../../src/images/add-button.svg) center no-repeat;
     color: #fff;
     max-width: 282px;
     min-width: 150px;
