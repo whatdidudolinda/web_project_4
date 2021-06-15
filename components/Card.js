@@ -29,7 +29,7 @@ class Card {
  
     _handleCardClick() {
         popupImage.src = this._link; 
-        popupImage.alt = this._name; 
+        popupImage.alt = this._name;
         popupImageTitle.textContent = this._name; 
  
         openPopup(imageModalWindow); 
@@ -37,7 +37,6 @@ class Card {
  
     _getCardTemplate() { 
         const cardTemplate = document.querySelector(this._cardTemplateSelector).content.querySelector('.card'); 
- 
         return cardTemplate; 
     } 
  

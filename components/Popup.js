@@ -2,21 +2,22 @@ export default class Popup {
     constructor(popupSelector) {
         this._popup = document.querySelector(popupSelector);
         this._handleEscClose = this._handleEscClose.bind(this);
+        this.close = this.close.bind(this);
     }
 
     open() {
-        document.addEventListener('keyup', this._handleEscClose)
-        this._popup.classList.add('popup_open')
+        this._popup.classList.add('popup_open');
+        document.addEventListener('keyup', this._handleEscClose);
     }
 
     close() {
-        document.removeEventListener('keyup', this._handleEscClose)
-        this._popup.classList.remove('popup_open')
+        this._popup.classList.remove('popup_open');
+        document.removeEventListener('keyup', this._handleEscClose);
     }
 
     _handleEscClose(e) {
         if (e.keyCode === 27) {
-            this.close()
+            this.close();
         }
     }
 
@@ -24,7 +25,7 @@ export default class Popup {
         const closeButton = this._popup.querySelector('.popup__btn-close')
 
         closeButton.addEventListener('click', e => {
-            this.close()
+            this.close();
         })
     }
 }
