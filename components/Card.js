@@ -1,7 +1,7 @@
 import { imageModalWindow, openPopup, closePopup, keyPress, popupImageTitle, popupImage } from './utils.js'
 
 class Card {
-    constructor(data, cardTemplateSelector, handleCardClick) {
+    constructor({ data, cardTemplateSelector}, handleCardClick) {
         this._link = data.link;
         this._name = data.name;
         this._cardTemplateSelector = cardTemplateSelector;
@@ -15,7 +15,7 @@ class Card {
 
         cardLikeButton.addEventListener('click', this._handleLikeIcon);
         cardDeleteButton.addEventListener('click', this._handleDeleteCard);
-        cardImage.addEventListener('click', () => this._handleCardClick);
+        cardImage.addEventListener('click', () => this._handleCardClick(this._link, this._name));
     }
 
     _handleLikeIcon(evt) {

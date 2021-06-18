@@ -19,17 +19,18 @@ const editProfilePopup = new PopupWithForm({
 editProfilePopup.setEventListeners();
 
 const section = new Section({
-    items: initialCards,
-    renderer: (items) => {
+    renderer: (data) => {
         const card = new Card({
-            data: items,
+            data,
             handleCardClick: (link, name) => {
                 imagePopup.open(link, name);
             }
         }, '.card-template');
-        list.addItem(card.createCard());
+        section.addItem(card.generateCard());
     }
-}, '.card')
+}, '.cards__list')
+
+section.renderItems(initialCards);
 
 const addCardPopup = new PopupWithForm({
     popupSelector: '.popup_type_add-card',
@@ -45,6 +46,7 @@ const addCardPopup = new PopupWithForm({
 });
 
 const imagePopup = new PopupWithimage('.popup_type_image');
+
 imagePopup.setEventListeners();
 
 const userInfo = new UserInfo({
@@ -108,10 +110,12 @@ editProfileValidator.enableValidation();
 addCardValidator.enableValidation();
 
 //Card Function// 
-initialCards.forEach((data) => {
-    const card = new Card(data, '.card-template');
-    list.append(card.generateCard());
-});
+// initialCards.forEach((data) => {
+//     const card = new Card(data, '.card-template');
+//     list.append(card.generateCard());
+// });
+
+section.renderItems(initialCards);
 
 function addCard(evt) {
     evt.preventDefault();
